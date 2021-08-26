@@ -1,12 +1,11 @@
-const  express = require ('express');
-const app = express() ;
+var express = require('express');
+var app = express();
 
-app.listen(80,() =>{
-    console.log("dfind aws");
-
+app.get('/', function (req, res) {
+  res.send('Hello World - Yaniv You made it !');
 });
 
-app.get('/', (req,res) => {
-    res.send("welcome Dfind");
+// use port 3000 unless there exists a preconfigured port
+var port = process.env.PORT || 3000;
 
-});
+app.listen(port);
